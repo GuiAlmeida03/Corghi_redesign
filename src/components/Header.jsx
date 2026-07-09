@@ -16,7 +16,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
+    const SCROLL_THRESHOLD_PX = 16 // switch to solid background shortly after the page starts scrolling
+    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD_PX)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -44,6 +45,7 @@ export default function Header() {
           href={buildWhatsAppLink('5511999999999')}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Solicitar orçamento via WhatsApp"
           className="rounded-md bg-brandRed px-4 py-2 font-body text-sm font-semibold text-white transition-colors hover:bg-brandRedDark"
         >
           Orçamento
