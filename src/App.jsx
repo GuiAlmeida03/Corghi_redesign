@@ -1,5 +1,23 @@
+// src/App.jsx
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
+import Home from './pages/Home'
+import LinhaLeve from './pages/LinhaLeve'
+import LinhaPesada from './pages/LinhaPesada'
+
 export default function App() {
   return (
-    <div className="p-8 font-title text-2xl">Corghi do Brasil — em construção</div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/linha-leve" element={<LinhaLeve />} />
+        <Route path="/linha-pesada" element={<LinhaPesada />} />
+      </Routes>
+      <Footer />
+      <WhatsAppButton />
+    </>
   )
 }
