@@ -12,6 +12,7 @@ export default {
         brandRedDark: '#A60A0B',
         accentYellow: '#FFED00',
         textMuted: '#A0A0A2',
+        textOnLight: '#1F1F21',
       },
       fontFamily: {
         title: ['"Titillium Web"', 'sans-serif'],
