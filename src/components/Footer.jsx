@@ -20,14 +20,24 @@ export default function Footer() {
         <p className="font-body text-sm text-textMuted">
           Via Anhanguera, 11072 — Km 16, Santa Fé, Osasco - SP, 06278-000
         </p>
-        <a
-          href={buildWhatsAppLink(CORGHI_WHATSAPP_TECNICO, 'Olá, preciso de suporte técnico Corghi.')}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-body text-sm text-accentYellow hover:text-white"
-        >
-          Suporte técnico via WhatsApp
-        </a>
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <a
+            href={buildWhatsAppLink(CORGHI_WHATSAPP_TECNICO, 'Olá, preciso de suporte técnico Corghi.')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-sm text-accentYellow hover:text-white"
+          >
+            Suporte técnico via WhatsApp
+          </a>
+          <a
+            href="https://corghi.conquistahost.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-sm text-textMuted hover:text-white"
+          >
+            Área restrita
+          </a>
+        </div>
 
         <p className="mt-2 font-body text-sm text-textMuted">
           © {new Date().getFullYear()} Corghi do Brasil. Todos os direitos reservados.

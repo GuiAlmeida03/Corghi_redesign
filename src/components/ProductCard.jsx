@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 
 export default function ProductCard({ product }) {
@@ -10,14 +11,24 @@ export default function ProductCard({ product }) {
         {product.category}
       </span>
       <h3 className="mt-1 font-title text-xl font-bold text-white">{product.name}</h3>
-      <a
-        href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO, quoteMessage)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 inline-block font-body text-sm font-semibold text-brandRed hover:text-brandRedDark"
-      >
-        Solicitar orçamento →
-      </a>
+      <div className="mt-4 flex flex-wrap items-center gap-4">
+        <a
+          href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO, quoteMessage)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-body text-sm font-semibold text-brandRed hover:text-brandRedDark"
+        >
+          Solicitar orçamento →
+        </a>
+        {product.slug && (
+          <Link
+            to={`/produto/${product.slug}`}
+            className="font-body text-sm font-semibold text-textMuted hover:text-white"
+          >
+            Ver detalhes
+          </Link>
+        )}
+      </div>
     </div>
   )
 }

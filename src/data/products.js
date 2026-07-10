@@ -11,6 +11,8 @@ export const LINHA_LEVE_PRODUCTS = [
     category: 'Alinhador 3D',
     image: alignerPhoto,
     imageAlt: 'Alinhador 3D Corghi EXACT LINEAR PLUS',
+    description:
+      'Alinhador 3D de precisão para veículos de passeio, com câmeras de alta resolução e software próprio Corghi para leitura rápida da geometria de suspensão e direção.',
   },
   {
     slug: 'hm-4502',
@@ -18,6 +20,8 @@ export const LINHA_LEVE_PRODUCTS = [
     category: 'Elevador',
     image: elevatorPhoto,
     imageAlt: 'Elevador automotivo Corghi HM 4502',
+    description:
+      'Elevador automotivo de coluna para uso em oficinas de linha leve, projetado para operação segura e rápida em serviços de manutenção geral.',
   },
 ]
 
@@ -28,6 +32,8 @@ export const LINHA_PESADA_PRODUCTS = [
     category: 'Balanceadora',
     image: truckBalancerPhoto,
     imageAlt: 'Balanceadora de pneus para linha pesada Corghi Proline 150',
+    description:
+      'Balanceadora robusta para rodas de caminhão e veículos pesados, construída para operação contínua em frotas e transportadoras.',
   },
   {
     slug: 'hd1800-hydrus',
@@ -35,5 +41,13 @@ export const LINHA_PESADA_PRODUCTS = [
     category: 'Desmontadora de pneus',
     image: tireChangerPhoto,
     imageAlt: 'Desmontadora de pneus Corghi HD 1800 Hydrus com centralina',
+    description:
+      'Desmontadora de pneus para linha pesada com centralina hidráulica, indicada para pneus de caminhão de grande porte em operação de alto volume.',
   },
 ]
+
+export const ALL_PRODUCTS = [...LINHA_LEVE_PRODUCTS, ...LINHA_PESADA_PRODUCTS]
+
+export function findProductBySlug(slug) {
+  return ALL_PRODUCTS.find((product) => product.slug === slug)
+}
