@@ -17,7 +17,7 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:grid-cols-2 md:py-32">
-        <div>
+        <div className="animate-fade-in-up">
           <img src={logoMark} alt="Corghi" className="mb-8 h-16 w-auto" />
           <h1 className="font-title text-4xl font-black leading-tight text-white md:text-5xl">
             Equipamentos de precisão para sua oficina
@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative hidden md:block">
+        <div className="relative hidden animate-fade-in-up md:block" style={{ animationDelay: '200ms' }}>
           <img
             src={alignerPhoto}
             alt="Alinhador 3D Corghi EXACT LINEAR PLUS"

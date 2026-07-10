@@ -1,6 +1,7 @@
 // src/components/ProductCatalog.jsx
 import { useMemo, useState } from 'react'
 import ProductCard from './ProductCard'
+import Reveal from './Reveal'
 
 const ALL_CATEGORIES_LABEL = 'Todos'
 
@@ -55,8 +56,10 @@ export default function ProductCatalog({ products }) {
 
       {filteredProducts.length > 0 ? (
         <div className="grid gap-8 md:grid-cols-2">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.slug} product={product} />
+          {filteredProducts.map((product, index) => (
+            <Reveal key={product.slug} delay={index * 100}>
+              <ProductCard product={product} />
+            </Reveal>
           ))}
         </div>
       ) : (

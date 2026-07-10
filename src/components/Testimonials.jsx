@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const TESTIMONIALS = [
   {
     quote: 'Equipamento robusto e suporte técnico rápido. Nossa oficina reduziu o tempo de alinhamento pela metade.',
@@ -25,16 +27,18 @@ export default function Testimonials() {
         </h2>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <figure key={t.author} className="rounded-lg bg-white p-6 shadow-sm">
-              {/* TODO: substituir pelo depoimento e foto reais do cliente quando disponíveis */}
-              <div className="mb-4 h-12 w-12 rounded-full bg-bgDark" aria-hidden="true" />
-              <blockquote className="font-body text-gray-700">&ldquo;{t.quote}&rdquo;</blockquote>
-              <figcaption className="mt-4 font-body text-sm font-semibold text-textOnLight">
-                {t.author}
-                <span className="block font-normal text-gray-500">{t.role}</span>
-              </figcaption>
-            </figure>
+          {TESTIMONIALS.map((t, index) => (
+            <Reveal key={t.author} delay={index * 120}>
+              <figure className="rounded-lg bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                {/* TODO: substituir pelo depoimento e foto reais do cliente quando disponíveis */}
+                <div className="mb-4 h-12 w-12 rounded-full bg-bgDark" aria-hidden="true" />
+                <blockquote className="font-body text-gray-700">&ldquo;{t.quote}&rdquo;</blockquote>
+                <figcaption className="mt-4 font-body text-sm font-semibold text-textOnLight">
+                  {t.author}
+                  <span className="block font-normal text-gray-500">{t.role}</span>
+                </figcaption>
+              </figure>
+            </Reveal>
           ))}
         </div>
       </div>

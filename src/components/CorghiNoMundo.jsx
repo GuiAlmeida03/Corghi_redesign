@@ -1,4 +1,6 @@
 // src/components/CorghiNoMundo.jsx
+import Reveal from './Reveal'
+
 const STATS = [
   { value: '150+', label: 'Países com presença da marca' },
   { value: '~50%', label: 'Do faturamento vindo da Europa' },
@@ -22,11 +24,11 @@ export default function CorghiNoMundo() {
         </p>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
-          {STATS.map((stat) => (
-            <div key={stat.label}>
+          {STATS.map((stat, index) => (
+            <Reveal key={stat.label} delay={index * 150}>
               <p className="font-title text-3xl font-black text-brandRed">{stat.value}</p>
               <p className="mt-2 font-body text-sm text-gray-600">{stat.label}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 

@@ -1,4 +1,6 @@
 // src/components/AboutCorghi.jsx
+import Reveal from './Reveal'
+
 const TIMELINE = [
   {
     year: '1947',
@@ -37,14 +39,14 @@ export default function AboutCorghi() {
         </div>
 
         <div className="mt-16 grid gap-10 md:grid-cols-3">
-          {TIMELINE.map((milestone) => (
-            <div key={milestone.year} className="border-t-2 border-brandRed pt-4">
+          {TIMELINE.map((milestone, index) => (
+            <Reveal key={milestone.year} delay={index * 120} className="border-t-2 border-brandRed pt-4">
               <span className="font-title text-2xl font-black text-brandRed">{milestone.year}</span>
               <h3 className="mt-2 font-title text-lg font-bold text-textOnLight">{milestone.title}</h3>
               <p className="mt-2 font-body text-sm leading-relaxed text-gray-600">
                 {milestone.description}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
 

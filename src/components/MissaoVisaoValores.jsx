@@ -1,4 +1,6 @@
 // src/components/MissaoVisaoValores.jsx
+import Reveal from './Reveal'
+
 const VALUES = [
   {
     title: 'Integridade e ética',
@@ -57,7 +59,7 @@ export default function MissaoVisaoValores() {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
-          <div className="rounded-lg border border-white/10 p-6">
+          <Reveal className="rounded-lg border border-white/10 p-6">
             <h3 className="font-title text-xl font-bold text-brandRed">Missão</h3>
             <p className="mt-3 font-body leading-relaxed text-textMuted">
               Ser a companhia líder mundial em tecnologia, design, produção, comercialização e assistência
@@ -65,26 +67,26 @@ export default function MissaoVisaoValores() {
               linha completa de produtos de excelente qualidade e características inovadoras e
               competitivas.
             </p>
-          </div>
-          <div className="rounded-lg border border-white/10 p-6">
+          </Reveal>
+          <Reveal delay={120} className="rounded-lg border border-white/10 p-6">
             <h3 className="font-title text-xl font-bold text-brandRed">Visão</h3>
             <p className="mt-3 font-body leading-relaxed text-textMuted">
               Ser líder mundial em design, produção, vendas e assistência de equipamentos para
               especialistas em pneus e oficinas, oferecendo produtos desenvolvidos para atender plenamente
               as necessidades dos clientes em todas as áreas e segmentos de mercado.
             </p>
-          </div>
+          </Reveal>
         </div>
 
         <h3 className="mt-16 text-center font-title text-xl font-bold text-white">Valores</h3>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {VALUES.map((value) => (
-            <div key={value.title} className="rounded-lg bg-white/5 p-5">
+          {VALUES.map((value, index) => (
+            <Reveal key={value.title} delay={(index % 3) * 100} className="rounded-lg bg-white/5 p-5">
               <h4 className="font-title text-sm font-bold uppercase tracking-wide text-accentYellow">
                 {value.title}
               </h4>
               <p className="mt-2 font-body text-sm leading-relaxed text-textMuted">{value.description}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
