@@ -34,9 +34,9 @@ export default function Home() {
       <AboutCorghi />
       <MissaoVisaoValores />
       <CorghiNoMundo />
+      <CorghiNoBrasil />
       <ProductLines />
       <Testimonials />
-      <CorghiNoBrasil />
       <CTASection />
     </>
   )
