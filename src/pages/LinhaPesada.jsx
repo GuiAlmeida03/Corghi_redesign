@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import CTASection from '../components/CTASection'
 import { LINHA_PESADA_PRODUCTS } from '../data/products'
+import { useDocumentHead } from '../lib/useDocumentHead'
 
 export default function LinhaPesada() {
+  useDocumentHead(
+    'Linha Pesada',
+    'Balanceadoras e desmontadoras de pneus Corghi para frotas e caminhões, construídas para operação contínua.',
+  )
+
   return (
     <>
       <section className="bg-bgDark py-20">

@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { buildWhatsAppLink } from '../lib/whatsapp'
+import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 import logoMark from '../assets/brand/corghi-logo-mark.svg'
 
 const NAV_LINKS = [
@@ -67,7 +67,7 @@ export default function Header() {
         </nav>
 
         <a
-          href={buildWhatsAppLink('5511999999999')}
+          href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO)}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Solicitar orçamento via WhatsApp"

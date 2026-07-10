@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import { buildWhatsAppLink } from '../lib/whatsapp'
+import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 import logoMark from '../assets/brand/corghi-logo-mark.svg'
 import alignerPhoto from '../assets/products/exact-linear-plus.png'
 
@@ -29,19 +29,20 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href={buildWhatsAppLink('5511999999999')}
+              href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO)}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md bg-brandRed px-6 py-3 font-body font-semibold text-white transition-colors hover:bg-brandRedDark"
             >
               Falar no WhatsApp
             </a>
-            <a
-              href="#linhas"
+            <button
+              type="button"
+              onClick={() => document.getElementById('linhas')?.scrollIntoView({ behavior: 'smooth' })}
               className="rounded-md border border-white/30 px-6 py-3 font-body font-semibold text-white transition-colors hover:border-white"
             >
               Conheça os equipamentos
-            </a>
+            </button>
           </div>
         </div>
 

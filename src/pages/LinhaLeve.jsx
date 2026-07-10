@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import CTASection from '../components/CTASection'
 import { LINHA_LEVE_PRODUCTS } from '../data/products'
+import { useDocumentHead } from '../lib/useDocumentHead'
 
 export default function LinhaLeve() {
+  useDocumentHead(
+    'Linha Leve',
+    'Alinhadores 3D e elevadores de precisão Corghi para carros de passeio, homologados pelas principais montadoras.',
+  )
+
   return (
     <>
       <section className="bg-bgDark py-20">

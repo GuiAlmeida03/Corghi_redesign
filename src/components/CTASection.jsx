@@ -1,5 +1,5 @@
 // src/components/CTASection.jsx
-import { buildWhatsAppLink } from '../lib/whatsapp'
+import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 
 export default function CTASection() {
   return (
@@ -12,7 +12,7 @@ export default function CTASection() {
           Fale agora com um consultor Corghi e receba um orçamento sem compromisso.
         </p>
         <a
-          href={buildWhatsAppLink('5511999999999')}
+          href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO)}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-block rounded-md bg-bgDark px-8 py-3 font-body font-semibold text-white transition-colors hover:bg-black"

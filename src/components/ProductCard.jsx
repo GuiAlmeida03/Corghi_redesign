@@ -1,4 +1,4 @@
-import { buildWhatsAppLink } from '../lib/whatsapp'
+import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 
 export default function ProductCard({ product }) {
   const quoteMessage = `Quero orçamento do ${product.name}`
@@ -11,7 +11,7 @@ export default function ProductCard({ product }) {
       </span>
       <h3 className="mt-1 font-title text-xl font-bold text-white">{product.name}</h3>
       <a
-        href={buildWhatsAppLink('5511999999999', quoteMessage)}
+        href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO, quoteMessage)}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-4 inline-block font-body text-sm font-semibold text-brandRed hover:text-brandRedDark"

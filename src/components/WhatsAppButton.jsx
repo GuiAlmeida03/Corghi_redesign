@@ -1,11 +1,9 @@
-import { buildWhatsAppLink } from '../lib/whatsapp'
-
-const CORGHI_WHATSAPP_NUMBER = '5511999999999' // TODO: substituir pelo número comercial real da Corghi do Brasil
+import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 
 export default function WhatsAppButton() {
   return (
     <a
-      href={buildWhatsAppLink(CORGHI_WHATSAPP_NUMBER)}
+      href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com um consultor no WhatsApp"
