@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Hero from '../components/Hero'
 import AboutCorghi from '../components/AboutCorghi'
+import MissaoVisaoValores from '../components/MissaoVisaoValores'
 import CorghiNoMundo from '../components/CorghiNoMundo'
 import ProductLines from '../components/ProductLines'
 import Testimonials from '../components/Testimonials'
@@ -31,6 +32,7 @@ export default function Home() {
     <>
       <Hero />
       <AboutCorghi />
+      <MissaoVisaoValores />
       <CorghiNoMundo />
       <ProductLines />
       <Testimonials />

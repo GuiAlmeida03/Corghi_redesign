@@ -1,6 +1,5 @@
 // src/components/CorghiNoMundo.jsx
 const STATS = [
-  { value: '1947', label: 'Fundação da Corghi na Emília, Itália' },
   { value: '150+', label: 'Países com presença da marca' },
   { value: '~50%', label: 'Do faturamento vindo da Europa' },
   { value: '~40%', label: 'Do faturamento vindo de Extremo Oriente, Japão e EUA' },
@@ -14,19 +13,35 @@ export default function CorghiNoMundo() {
           Escala global
         </span>
         <h2 className="mt-3 font-title text-3xl font-bold text-textOnLight md:text-4xl">Corghi no Mundo</h2>
-        <p className="mt-6 font-body text-lg leading-relaxed text-gray-600">
-          Líder no mercado italiano de equipamentos para oficina, a Corghi opera diretamente na Espanha,
-          França, Alemanha, Estados Unidos, China, Austrália e Brasil, com produtos presentes em mais de
-          150 países.
+
+        <p className="mx-auto mt-6 max-w-3xl font-body text-lg leading-relaxed text-gray-600">
+          A Corghi é líder no mercado italiano, além de ser líder no mercado internacional. Cerca de 50%
+          do volume de negócios é gerado na Europa — o "mercado interno" da marca — enquanto Extremo
+          Oriente, Japão e Estados Unidos são os principais mercados estrangeiros, representando 40% do
+          seu volume de negócios.
         </p>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {STATS.map((stat) => (
             <div key={stat.label}>
               <p className="font-title text-3xl font-black text-brandRed">{stat.value}</p>
               <p className="mt-2 font-body text-sm text-gray-600">{stat.label}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-12 max-w-3xl space-y-4 text-left font-body text-base leading-relaxed text-gray-600">
+          <p>
+            A qualidade dos produtos e serviços permanece constante ao longo do tempo e em diferentes
+            mercados. Os parceiros da Corghi sabem que podem confiar na empresa — para muitos deles, a
+            colaboração continua por décadas.
+          </p>
+          <p>
+            A competitividade da marca está diretamente ligada a uma presença forte e abrangente nos
+            mercados mundiais e à capacidade de oferecer produtos de alta qualidade, uma linha ampla e
+            diversificada, além de serviços de primeira qualidade onde quer que sejam necessários — política
+            fielmente apoiada por seus distribuidores em todo o mundo.
+          </p>
         </div>
       </div>
     </section>
