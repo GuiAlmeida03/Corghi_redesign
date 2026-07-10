@@ -13,15 +13,22 @@ export const LINHA_LEVE_PRODUCTS = [
     imageAlt: 'Alinhador 3D Corghi EXACT LINEAR PLUS',
     description:
       'Alinhador 3D de precisão para veículos de passeio, com câmeras de alta resolução e software próprio Corghi para leitura rápida da geometria de suspensão e direção.',
+    // Both verified live on corghidobrasil.com (2026-07-09) — safe to link directly.
+    catalogUrl: 'https://corghidobrasil.com/wp-content/uploads/2021/02/CATALOGO-EXACT-PLUS-BR.pdf',
+    videoUrl: 'https://www.youtube.com/watch?v=DKOLKjy1XPw',
   },
   {
+    // Real product name on corghidobrasil.com is "ERCO HC 4502" — "HM 4502" was an earlier
+    // extraction error. Slug/asset filenames kept as-is to avoid churn on a just-launched site.
     slug: 'hm-4502',
-    name: 'HM 4502',
+    name: 'ERCO HC 4502',
     category: 'Elevador',
     image: elevatorPhoto,
-    imageAlt: 'Elevador automotivo Corghi HM 4502',
+    imageAlt: 'Elevador automotivo Corghi ERCO HC 4502',
     description:
       'Elevador automotivo de coluna para uso em oficinas de linha leve, projetado para operação segura e rápida em serviços de manutenção geral.',
+    // TODO: o PDF de ficha técnica linkado na página oficial do produto está com 404 no site da
+    // Corghi (confirmado em 2026-07-09) — sem catálogo/vídeo próprio disponível no momento.
   },
 ]
 
@@ -34,6 +41,8 @@ export const LINHA_PESADA_PRODUCTS = [
     imageAlt: 'Balanceadora de pneus para linha pesada Corghi Proline 150',
     description:
       'Balanceadora robusta para rodas de caminhão e veículos pesados, construída para operação contínua em frotas e transportadoras.',
+    // TODO: os PDFs de catálogo e ficha técnica linkados na página oficial do produto estão com
+    // 404 no site da Corghi (confirmado em 2026-07-09) — sem vídeo próprio disponível no momento.
   },
   {
     slug: 'hd1800-hydrus',
@@ -43,6 +52,10 @@ export const LINHA_PESADA_PRODUCTS = [
     imageAlt: 'Desmontadora de pneus Corghi HD 1800 Hydrus com centralina',
     description:
       'Desmontadora de pneus para linha pesada com centralina hidráulica, indicada para pneus de caminhão de grande porte em operação de alto volume.',
+    // Video verified live on corghidobrasil.com (2026-07-09) — safe to link directly.
+    videoUrl: 'https://youtu.be/tipuVCghFcI',
+    // TODO: o PDF de catálogo linkado na página oficial do produto está com 404 no site da Corghi
+    // (confirmado em 2026-07-09) — sem ficha técnica própria disponível no momento.
   },
 ]
 

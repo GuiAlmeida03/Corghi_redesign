@@ -12,6 +12,7 @@ export default function ProdutoDetalhe() {
   useDocumentHead(
     product ? product.name : 'Produto não encontrado',
     product ? product.description : 'Produto não encontrado no catálogo Corghi.',
+    product ? new URL(product.image, window.location.origin).href : undefined,
   )
 
   if (!product) {
@@ -72,15 +73,39 @@ export default function ProdutoDetalhe() {
             </div>
           </div>
 
-          <div className="mt-16 grid gap-4 border-t border-white/10 pt-8 font-body text-sm text-textMuted sm:grid-cols-2">
-            {/* TODO: substituir pelos links reais de catálogo (PDF) e ficha técnica (PDF) deste produto, disponíveis em corghidobrasil.com */}
-            <span className="rounded-md border border-white/10 px-4 py-3 text-center opacity-60">
-              Catálogo (PDF) — em breve
-            </span>
-            {/* TODO: substituir pelo vídeo real do produto no YouTube (canal CORGHIspa) */}
-            <span className="rounded-md border border-white/10 px-4 py-3 text-center opacity-60">
-              Vídeo do produto — em breve
-            </span>
+          <div className="mt-16 grid gap-4 border-t border-white/10 pt-8 font-body text-sm sm:grid-cols-2">
+            {product.catalogUrl ? (
+              <a
+                href={product.catalogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-brandRed"
+              >
+                Catálogo (PDF) ↓
+              </a>
+            ) : (
+              // TODO: o PDF de catálogo deste produto não está disponível/está com link quebrado
+              // no site oficial no momento — reavaliar quando a Corghi atualizar o material.
+              <span className="rounded-md border border-white/10 px-4 py-3 text-center text-textMuted opacity-60">
+                Catálogo (PDF) — indisponível
+              </span>
+            )}
+
+            {product.videoUrl ? (
+              <a
+                href={product.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-brandRed"
+              >
+                Vídeo do produto ▶
+              </a>
+            ) : (
+              // TODO: sem vídeo específico deste produto publicado no canal oficial no momento.
+              <span className="rounded-md border border-white/10 px-4 py-3 text-center text-textMuted opacity-60">
+                Vídeo do produto — indisponível
+              </span>
+            )}
           </div>
         </div>
       </section>

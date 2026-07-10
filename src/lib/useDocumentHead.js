@@ -2,21 +2,35 @@ import { useEffect } from 'react'
 
 const SITE_NAME = 'Corghi do Brasil'
 
-export function useDocumentHead(title, description) {
+function setMeta(selector, attribute, value) {
+  let meta = document.querySelector(selector)
+  if (!meta) {
+    meta = document.createElement('meta')
+    const [, attrName, attrValue] = selector.match(/meta\[(\w+)="([^"]+)"\]/)
+    meta.setAttribute(attrName, attrValue)
+    document.head.appendChild(meta)
+  }
+  const previousContent = meta.getAttribute(attribute)
+  meta.setAttribute(attribute, value)
+  return () => {
+    if (previousContent) meta.setAttribute(attribute, previousContent)
+  }
+}
+
+export function useDocumentHead(title, description, image) {
   useEffect(() => {
-    document.title = `${title} | ${SITE_NAME}`
+    const fullTitle = `${title} | ${SITE_NAME}`
+    document.title = fullTitle
 
-    let meta = document.querySelector('meta[name="description"]')
-    if (!meta) {
-      meta = document.createElement('meta')
-      meta.setAttribute('name', 'description')
-      document.head.appendChild(meta)
+    const restoreFns = [
+      setMeta('meta[name="description"]', 'content', description),
+      setMeta('meta[property="og:title"]', 'content', fullTitle),
+      setMeta('meta[property="og:description"]', 'content', description),
+    ]
+    if (image) {
+      restoreFns.push(setMeta('meta[property="og:image"]', 'content', image))
     }
-    const previousContent = meta.getAttribute('content')
-    meta.setAttribute('content', description)
 
-    return () => {
-      if (previousContent) meta.setAttribute('content', previousContent)
-    }
-  }, [title, description])
+    return () => restoreFns.forEach((restore) => restore())
+  }, [title, description, image])
 }
