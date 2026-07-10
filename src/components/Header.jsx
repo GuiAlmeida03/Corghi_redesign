@@ -1,19 +1,21 @@
 // src/components/Header.jsx
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { buildWhatsAppLink } from '../lib/whatsapp'
 import logoMark from '../assets/brand/corghi-logo-mark.svg'
 
 const NAV_LINKS = [
-  { label: 'A Corghi', href: '/#a-corghi' },
-  { label: 'Linha Leve', href: '/linha-leve' },
-  { label: 'Linha Pesada', href: '/linha-pesada' },
-  { label: 'Corghi no Brasil', href: '/#corghi-no-brasil' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'A Corghi', anchor: 'a-corghi' },
+  { label: 'Linha Leve', to: '/linha-leve' },
+  { label: 'Linha Pesada', to: '/linha-pesada' },
+  { label: 'Corghi no Brasil', anchor: 'corghi-no-brasil' },
+  { label: 'Contato', anchor: 'contato' },
 ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const SCROLL_THRESHOLD_PX = 16 // switch to solid background shortly after the page starts scrolling
@@ -21,6 +23,14 @@ export default function Header() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  function goToSection(anchorId) {
+    if (location.pathname === '/') {
+      document.getElementById(anchorId)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/', { state: { scrollTo: anchorId } })
+    }
+  }
 
   return (
     <header
@@ -34,11 +44,26 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden gap-8 font-body text-sm font-medium md:flex">
-          {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="text-white transition-colors hover:text-brandRed">
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.to ? (
+              <Link
+                key={link.label}
+                to={link.to}
+                className="text-white transition-colors hover:text-brandRed"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <button
+                key={link.label}
+                type="button"
+                onClick={() => goToSection(link.anchor)}
+                className="text-white transition-colors hover:text-brandRed"
+              >
+                {link.label}
+              </button>
+            ),
+          )}
         </nav>
 
         <a
