@@ -1,6 +1,6 @@
 // src/pages/LinhaLeve.jsx
 import { Link } from 'react-router-dom'
-import ProductCard from '../components/ProductCard'
+import ProductCatalog from '../components/ProductCatalog'
 import CTASection from '../components/CTASection'
 import { LINHA_LEVE_PRODUCTS } from '../data/products'
 import { useDocumentHead } from '../lib/useDocumentHead'
@@ -30,10 +30,8 @@ export default function LinhaLeve() {
       </section>
 
       <section className="bg-bgDarkAlt pb-16 pt-40 sm:py-16">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2">
-          {LINHA_LEVE_PRODUCTS.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
+        <div className="mx-auto max-w-7xl px-6">
+          <ProductCatalog products={LINHA_LEVE_PRODUCTS} />
         </div>
       </section>
 
