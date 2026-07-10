@@ -53,6 +53,18 @@ export default function AboutCorghi() {
           veículos do mundo — homologada pela maioria das montadoras e fabricantes de pneus, com suporte
           técnico especializado e peças de reposição para toda a linha leve e pesada no Brasil.
         </p>
+
+        <div className="mt-8 text-center">
+          <button
+            type="button"
+            onClick={() =>
+              document.getElementById('missao-visao-valores')?.scrollIntoView({ behavior: 'smooth' })
+            }
+            className="font-body text-sm font-semibold text-brandRed hover:text-brandRedDark"
+          >
+            Conheça nossa missão, visão e valores ↓
+          </button>
+        </div>
       </div>
     </section>
   )
