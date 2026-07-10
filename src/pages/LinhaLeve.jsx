@@ -23,7 +23,7 @@ export default function LinhaLeve() {
         </div>
       </section>
 
-      <section className="bg-bgDarkAlt py-16">
+      <section className="bg-bgDarkAlt pb-16 pt-40 sm:py-16">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2">
           {LINHA_LEVE_PRODUCTS.map((product) => (
             <ProductCard key={product.slug} product={product} />
