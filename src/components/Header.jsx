@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Linha Leve', to: '/linha-leve' },
   { label: 'Linha Pesada', to: '/linha-pesada' },
   { label: 'Corghi no Brasil', anchor: 'corghi-no-brasil' },
+  { label: 'Eventos', anchor: 'eventos' },
   { label: 'Contato', anchor: 'contato' },
 ]
 

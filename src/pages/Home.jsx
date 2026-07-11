@@ -8,6 +8,7 @@ import CorghiNoMundo from '../components/CorghiNoMundo'
 import ProductLines from '../components/ProductLines'
 import Testimonials from '../components/Testimonials'
 import CorghiNoBrasil from '../components/CorghiNoBrasil'
+import Eventos from '../components/Eventos'
 import CTASection from '../components/CTASection'
 import { useDocumentHead } from '../lib/useDocumentHead'
 
@@ -37,6 +38,7 @@ export default function Home() {
       <CorghiNoBrasil />
       <ProductLines />
       <Testimonials />
+      <Eventos />
       <CTASection />
     </>
   )
