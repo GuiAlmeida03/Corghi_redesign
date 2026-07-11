@@ -3,7 +3,7 @@ import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 
 export default function CTASection() {
   return (
-    <section id="contato" className="bg-brandRed py-16">
+    <section className="bg-brandRed py-16">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <h2 className="font-title text-3xl font-bold text-white md:text-4xl">
           Pronto para equipar sua oficina?
