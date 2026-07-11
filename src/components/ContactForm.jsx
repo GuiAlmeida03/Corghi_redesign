@@ -69,7 +69,7 @@ export default function ContactForm() {
                 required
                 value={form.nome}
                 onChange={(event) => updateField('nome', event.target.value)}
-                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none"
+                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none focus:ring-2 focus:ring-brandRed/40"
               />
             </div>
             <div>
@@ -82,7 +82,7 @@ export default function ContactForm() {
                 required
                 value={form.email}
                 onChange={(event) => updateField('email', event.target.value)}
-                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none"
+                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none focus:ring-2 focus:ring-brandRed/40"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
                 type="tel"
                 value={form.telefone}
                 onChange={(event) => updateField('telefone', event.target.value)}
-                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none"
+                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none focus:ring-2 focus:ring-brandRed/40"
               />
             </div>
             <div>
@@ -109,7 +109,7 @@ export default function ContactForm() {
                 type="text"
                 value={form.assunto}
                 onChange={(event) => updateField('assunto', event.target.value)}
-                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none"
+                className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none focus:ring-2 focus:ring-brandRed/40"
               />
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function ContactForm() {
               rows={5}
               value={form.mensagem}
               onChange={(event) => updateField('mensagem', event.target.value)}
-              className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none"
+              className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 font-body text-textOnLight focus:border-brandRed focus:outline-none focus:ring-2 focus:ring-brandRed/40"
             />
           </div>
 

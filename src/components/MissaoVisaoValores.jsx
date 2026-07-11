@@ -60,7 +60,7 @@ export default function MissaoVisaoValores() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <Reveal className="rounded-lg border border-white/10 p-6">
-            <h3 className="font-title text-xl font-bold text-brandRed">Missão</h3>
+            <h3 className="font-title text-xl font-bold text-accentYellow">Missão</h3>
             <p className="mt-3 font-body leading-relaxed text-textMuted">
               Ser a companhia líder mundial em tecnologia, design, produção, comercialização e assistência
               de equipamentos para montadoras, especialistas em pneus, auto centers e oficinas — com uma
@@ -69,7 +69,7 @@ export default function MissaoVisaoValores() {
             </p>
           </Reveal>
           <Reveal delay={120} className="rounded-lg border border-white/10 p-6">
-            <h3 className="font-title text-xl font-bold text-brandRed">Visão</h3>
+            <h3 className="font-title text-xl font-bold text-accentYellow">Visão</h3>
             <p className="mt-3 font-body leading-relaxed text-textMuted">
               Ser líder mundial em design, produção, vendas e assistência de equipamentos para
               especialistas em pneus e oficinas, oferecendo produtos desenvolvidos para atender plenamente

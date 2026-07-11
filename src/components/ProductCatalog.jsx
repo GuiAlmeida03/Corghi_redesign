@@ -32,7 +32,7 @@ export default function ProductCatalog({ products }) {
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Pesquisar equipamento..."
           aria-label="Pesquisar equipamento"
-          className="w-full rounded-md border border-white/10 bg-bgDark px-4 py-2 font-body text-sm text-white placeholder:text-textMuted focus:border-brandRed focus:outline-none sm:max-w-xs"
+          className="w-full rounded-md border border-white/10 bg-bgDark px-4 py-2 font-body text-sm text-white placeholder:text-textMuted focus:border-brandRed focus:outline-none focus:ring-2 focus:ring-brandRed/40 sm:max-w-xs"
         />
 
         <div className="flex flex-wrap gap-2">

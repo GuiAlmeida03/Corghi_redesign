@@ -55,7 +55,7 @@ export default function Eventos() {
     <section id="eventos" className="bg-bgDark py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="font-body text-sm font-semibold uppercase tracking-widest text-brandRed">
+          <span className="font-body text-sm font-semibold uppercase tracking-widest text-accentYellow">
             Onde estivemos
           </span>
           <h2 className="mt-3 font-title text-3xl font-bold text-white md:text-4xl">Eventos</h2>

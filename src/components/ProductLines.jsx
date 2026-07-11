@@ -51,7 +51,7 @@ export default function ProductLines() {
                     </li>
                   ))}
                 </ul>
-                <span className="mt-6 inline-block font-body font-semibold text-brandRed transition-transform duration-200 group-hover:translate-x-1">
+                <span className="mt-6 inline-block font-body font-semibold text-accentYellow transition-transform duration-200 group-hover:translate-x-1">
                   Ver equipamentos →
                 </span>
               </Link>

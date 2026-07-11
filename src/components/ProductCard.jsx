@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
           href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO, quoteMessage)}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-body text-sm font-semibold text-brandRed hover:text-brandRedDark"
+          className="font-body text-sm font-semibold text-accentYellow hover:text-white"
         >
           Solicitar orçamento →
         </a>

@@ -21,7 +21,7 @@ export default function ProdutoDetalhe() {
       <section className="bg-bgDark py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h1 className="font-title text-3xl font-bold text-white">Produto não encontrado</h1>
-          <Link to="/" className="mt-4 inline-block font-body text-brandRed hover:text-brandRedDark">
+          <Link to="/" className="mt-4 inline-block font-body text-accentYellow hover:text-white">
             Voltar para o início
           </Link>
         </div>
@@ -98,7 +98,7 @@ export default function ProdutoDetalhe() {
                 href={product.catalogUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-brandRed"
+                className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-accentYellow"
               >
                 {product.catalogIsGeneral ? 'Catálogo geral Corghi (PDF) ↓' : 'Catálogo (PDF) ↓'}
               </a>
@@ -115,7 +115,7 @@ export default function ProdutoDetalhe() {
                 href={product.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-brandRed"
+                className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-accentYellow"
               >
                 Vídeo do produto ▶
               </a>
