@@ -30,6 +30,15 @@ export default function Header() {
     setMobileMenuOpen(false)
   }, [location.pathname])
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [mobileMenuOpen])
+
   function goToSection(anchorId) {
     setMobileMenuOpen(false)
     if (location.pathname === '/') {
