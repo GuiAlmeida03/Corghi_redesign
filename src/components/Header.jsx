@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
+import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO, CORGHI_WHATSAPP_TECNICO } from '../lib/whatsapp'
 import logoMark from '../assets/brand/corghi-logo-mark.svg'
 
 const NAV_LINKS = [
@@ -74,6 +74,25 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
+            href="https://corghi.conquistahost.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden font-body text-sm font-medium text-textMuted transition-colors hover:text-white lg:inline"
+          >
+            Área Restrita
+          </a>
+
+          <a
+            href={buildWhatsAppLink(CORGHI_WHATSAPP_TECNICO, 'Olá, gostaria de falar com a Área Técnica.')}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Falar com a Área Técnica via WhatsApp"
+            className="hidden rounded-md border border-white/30 px-4 py-2 font-body text-sm font-semibold text-white transition-colors hover:border-white sm:inline-block"
+          >
+            Área Técnica
+          </a>
+
+          <a
             href={buildWhatsAppLink(CORGHI_WHATSAPP_ORCAMENTO)}
             target="_blank"
             rel="noopener noreferrer"
@@ -128,6 +147,23 @@ export default function Header() {
               </button>
             ),
           )}
+
+          <a
+            href={buildWhatsAppLink(CORGHI_WHATSAPP_TECNICO, 'Olá, gostaria de falar com a Área Técnica.')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded px-2 py-3 text-white transition-colors hover:text-brandRed"
+          >
+            Área Técnica
+          </a>
+          <a
+            href="https://corghi.conquistahost.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded px-2 py-3 text-textMuted transition-colors hover:text-white"
+          >
+            Área Restrita
+          </a>
         </nav>
       )}
     </header>

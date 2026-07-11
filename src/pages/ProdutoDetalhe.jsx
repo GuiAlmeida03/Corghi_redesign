@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { buildWhatsAppLink, CORGHI_WHATSAPP_ORCAMENTO } from '../lib/whatsapp'
 import { findProductBySlug } from '../data/products'
 import CTASection from '../components/CTASection'
+import Reveal from '../components/Reveal'
 import { useDocumentHead } from '../lib/useDocumentHead'
 
 export default function ProdutoDetalhe() {
@@ -72,6 +73,24 @@ export default function ProdutoDetalhe() {
               </a>
             </div>
           </div>
+
+          {product.features && (
+            <div className="mt-16 border-t border-white/10 pt-12">
+              <h2 className="font-title text-xl font-bold text-white">Principais recursos</h2>
+              <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                {product.features.map((feature, index) => (
+                  <Reveal key={feature.title} delay={(index % 2) * 100}>
+                    <h3 className="font-body font-semibold text-white">
+                      <span aria-hidden="true">{feature.icon}</span> {feature.title}
+                    </h3>
+                    <p className="mt-1 font-body text-sm leading-relaxed text-textMuted">
+                      {feature.description}
+                    </p>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-16 grid gap-4 border-t border-white/10 pt-8 font-body text-sm sm:grid-cols-2">
             {product.catalogUrl ? (
