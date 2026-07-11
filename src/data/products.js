@@ -4,6 +4,11 @@ import elevatorPhoto from '../assets/products/hm-4502.png'
 import truckBalancerPhoto from '../assets/products/proline150-truck.png'
 import tireChangerPhoto from '../assets/products/hd1800-hydrus.png'
 
+// General Corghi equipment catalog (covers the full product line, not product-specific).
+// Verified live on corghidobrasil.com (2026-07-09) — used as a fallback when a product's own
+// catalog/datasheet PDF is broken on the official site.
+const GENERAL_CATALOG_URL = 'https://corghidobrasil.com/wp-content/themes/corghi/catalogo.pdf'
+
 export const LINHA_LEVE_PRODUCTS = [
   {
     slug: 'exact-linear-plus',
@@ -27,8 +32,11 @@ export const LINHA_LEVE_PRODUCTS = [
     imageAlt: 'Elevador automotivo Corghi ERCO HC 4502',
     description:
       'Elevador automotivo de coluna para uso em oficinas de linha leve, projetado para operação segura e rápida em serviços de manutenção geral.',
-    // TODO: o PDF de ficha técnica linkado na página oficial do produto está com 404 no site da
-    // Corghi (confirmado em 2026-07-09) — sem catálogo/vídeo próprio disponível no momento.
+    // O PDF de ficha técnica específico deste produto está com 404 no site oficial (confirmado em
+    // 2026-07-09) — usamos o catálogo geral da Corghi como alternativa.
+    catalogUrl: GENERAL_CATALOG_URL,
+    catalogIsGeneral: true,
+    // TODO: sem vídeo próprio deste produto disponível no canal oficial no momento.
   },
 ]
 
@@ -41,8 +49,11 @@ export const LINHA_PESADA_PRODUCTS = [
     imageAlt: 'Balanceadora de pneus para linha pesada Corghi Proline 150',
     description:
       'Balanceadora robusta para rodas de caminhão e veículos pesados, construída para operação contínua em frotas e transportadoras.',
-    // TODO: os PDFs de catálogo e ficha técnica linkados na página oficial do produto estão com
-    // 404 no site da Corghi (confirmado em 2026-07-09) — sem vídeo próprio disponível no momento.
+    // Os PDFs de catálogo/ficha técnica específicos deste produto estão com 404 no site oficial
+    // (confirmado em 2026-07-09) — usamos o catálogo geral da Corghi como alternativa.
+    catalogUrl: GENERAL_CATALOG_URL,
+    catalogIsGeneral: true,
+    // TODO: sem vídeo próprio deste produto disponível no canal oficial no momento.
   },
   {
     slug: 'hd1800-hydrus',

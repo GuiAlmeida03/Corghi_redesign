@@ -81,7 +81,7 @@ export default function ProdutoDetalhe() {
                 rel="noopener noreferrer"
                 className="rounded-md border border-white/10 px-4 py-3 text-center text-white transition-colors hover:border-brandRed hover:text-brandRed"
               >
-                Catálogo (PDF) ↓
+                {product.catalogIsGeneral ? 'Catálogo geral Corghi (PDF) ↓' : 'Catálogo (PDF) ↓'}
               </a>
             ) : (
               // TODO: o PDF de catálogo deste produto não está disponível/está com link quebrado
